@@ -1,2 +1,2 @@
 # DevOps_Lab
-This repository is dedicated to my continuous learning in DevOps. Here, I will explore and document fundamental practices, tools, and concepts, covering topics such as CI/CD, automation, Infrastructure as Code (IaC), containers, monitoring, and more.
+This repository is dedicated to my continuous learning in DevOps. Here, I will explore and document fundamental practices, tools, and concepts, covering topics such as CI/CD, automation, Infrastructure as Code (IaC), containers, monitoring, and more. The goal is to develop both practical and theoretical knowledge of DevOps best practices, with hands-on examples and projects that showcase the use of technologies like Docker, Kubernetes, Ansible, Terraform, GitHub Actions, among others
