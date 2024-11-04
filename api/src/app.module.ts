@@ -7,12 +7,12 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 	imports: [
 		TypeOrmModule.forRoot({
 			type: "mysql",
-			host: "localhost",
-			port: 3306,
+			host: "mysql", // O nome do container do MySQL
+			port: 3306, // A porta padrão do MySQL
 			username: "admin",
 			password: "root",
 			database: "rocketseat-db",
-			entities: [],
+			entities: [], // Adicione suas entidades aqui
 			synchronize: true,
 		}),
 	],
