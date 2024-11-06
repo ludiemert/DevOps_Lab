@@ -1,0 +1,91 @@
+Resolucao do Desafio: Implementação de Práticas DevOps em um Ambiente Empresarial Fictício
+
+Etapa 1: Diagnóstico Cultural (C de CALMS)
+Objetivo
+Identificar um processo dentro da Tech que poderia se beneficiar das práticas DevOps. A ideia é entender os pontos de atrito e as áreas que precisam de aprimoramento, especialmente entre as equipes de Desenvolvimento e Operações.
+
+Passo a Passo
+
+1.	Análise dos Processos Atuais:
+#	Entrega de Código: Atualmente, a equipe de desenvolvimento envia um pacote para operações sem integração contínua, o que atrasa a entrega.
+#	Deploy Manual: Os deploys são manuais e sem padronização, o que gera inconsistências e maior probabilidade de erro.
+#	Testes Manuais: Testes após o deploy são manuais, lentos e sujeitos a falhas.
+#	Monitoramento Manual: Falta de monitoramento automatizado significa que a equipe de operações detecta problemas tardiamente.
+
+2.	Identificar Pontos de Atrito:
+#	A falta de integração entre Desenvolvimento e Operações atrasa o fluxo e aumenta a ocorrência de erros.
+#	Ausência de processos de automação e monitoramento adequados aumenta o tempo de resposta e recuperação.
+#	Cultura reativa em vez de proativa, com pouca comunicação e colaboração entre equipes.
+
+3.	Oportunidades de Melhoria:
+#	Implementar CI/CD (Integração Contínua e Entrega Contínua) para automatizar a entrega e os testes.
+#	Adotar práticas de monitoramento automatizado para alertas em tempo real.
+#	Fomentar uma cultura de colaboração para eliminar o “jogo de empurra” entre as equipes.
+________________________________________
+Etapa 2: Automação (A de CALMS)
+Objetivo
+Propor uma solução de automação para otimizar o processo identificado, diminuindo o tempo de entrega, aumentando a taxa de sucesso dos deploys e reduzindo o MTTR (Tempo Médio de Recuperação).
+
+Passo a Passo
+
+1.	Implementação de CI/CD:
+#	Configurar um pipeline CI/CD com ferramentas como Jenkins, GitHub Actions ou GitLab CI para automação do build, testes e deploys.
+#	Dividir o pipeline em três estágios principais:
+##	Build e Testes Automatizados: Realizar testes de unidade e de integração no código antes de qualquer deploy.
+##	Deploy Automatizado: Automatizar o deploy no ambiente de produção com gatilhos de aprovação (e.g., deploy após merge na branch principal).
+##	Monitoramento Pós-deploy: Utilizar ferramentas de monitoramento para acompanhar o desempenho do sistema após o deploy.
+
+2.	Automação de Testes:
+#	Substituir os testes manuais por uma suíte de testes automatizados (usando ferramentas como Selenium, JUnit, ou Postman para APIs).
+#	Incluir testes de regressão e de funcionalidade para garantir que o código em produção está funcionando conforme esperado.
+
+3.	Plano de Implementação:
+#	Capacitação da Equipe: Treinar as equipes para usar as novas ferramentas de automação e monitoramento.
+#	Implementação Gradual: Iniciar com o Sistema de Gestão de Vendas (LEGADO) como piloto, testando a eficácia da automação antes de expandir para outros projetos.
+#	Suporte e Monitoramento: Garantir que os membros da equipe de operações e desenvolvimento estejam confortáveis e preparados para ajustar o pipeline conforme necessário.
+
+________________________________________
+
+Etapa 3: Mensuração e Compartilhamento de Conhecimento (M e S de CALMS)
+Objetivo
+Estabelecer métricas para avaliar a eficiência e qualidade dos processos automatizados e criar um plano de compartilhamento de conhecimento para consolidar uma cultura de aprendizado e colaboração.
+
+Passo a Passo
+
+1.	Definir Métricas de Sucesso:
+#	Lead Time de Deploy: Tempo entre a entrega do código e o deploy.
+#	Taxa de Sucesso dos Deploys: Quantidade de deploys que ocorrem sem falhas.
+#	MTTR: Tempo médio necessário para resolver um incidente após o deploy.
+#	Número de Incidentes Pós-deploy: Quantidade de incidentes detectados após cada deploy.
+
+2.	Planejar a Disseminação de Conhecimento:
+#	Documentação: Criar uma documentação clara e acessível sobre os processos de CI/CD e monitoramento.
+#	Workshops Internos: Realizar workshops para compartilhar as melhorias e treinamentos sobre as novas ferramentas.
+#	Sessões de Retrospectiva: Agendar reuniões regulares entre Desenvolvimento e Operações para revisar o impacto das mudanças e coletar feedback.
+________________________________________
+Etapa 4: Aplicação das Três Maneiras
+Objetivo
+Seguir as Três Maneiras de DevOps (Fluxo, Feedback e Aprendizado) para promover um ambiente que acelera entregas, integra feedback constante e cultiva uma mentalidade de experimentação e aprendizado.
+Passo a Passo
+
+1.	Primeira Maneira (Acelerar o Fluxo):
+#	Automatizar o fluxo de trabalho de desenvolvimento para produção com CI/CD.
+#	Reduzir o tempo de espera entre a finalização do código e o deploy.
+
+2.	Segunda Maneira (Ampliar o Feedback):
+#	Implementar um sistema de feedback contínuo, coletando métricas em tempo real e relatórios pós-deploy.
+#	Adotar uma cultura de revisão mútua entre as equipes, criando checkpoints para avaliar problemas e oportunidades de melhoria.
+
+3.	Terceira Maneira (Experimentar e Aprender):
+#	Incentivar as equipes a compartilhar seus experimentos e aprendizagens, mesmo quando falham.
+#	Promover a prática de "blameless postmortems" para que erros sejam analisados e transformados em oportunidades de melhoria sem apontar culpados.
+________________________________________
+Resultado Esperado
+Ao finalizar o projeto, vamor ter um plano de implementação de DevOps para a empresa fictícia Tech, com práticas de automação e cultura DevOps que visam:
+•	Reduzir o tempo de deploy e aumentar a confiabilidade dos sistemas;
+•	Melhorar a colaboração e comunicação entre as equipes de Desenvolvimento e Operações;
+•	Criar um ambiente de experimentação, aprendizado contínuo e melhoria constante.
+Esse plano poderá servir como um modelo prático para aplicação de DevOps em empresas reais, onde a cultura, automação e medição são essenciais para o sucesso do projeto!!
+
+Link notion
+https://www.notion.so/Resolucao-do-Desafio-Implementa-o-de-Pr-ticas-DevOps-em-um-Ambiente-Empresarial-Fict-cio-1-1367e35580bc80558f0be9741a136d88?pvs=4
