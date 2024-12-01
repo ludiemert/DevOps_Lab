@@ -1,31 +1,22 @@
-# Escolha uma imagem base do Python
-FROM python:3.9-slim
+# Usar a imagem oficial do Python
+FROM python:3.10-slim
 
-# Defina o diretório de trabalho dentro do container
+# Instalar dependências de compilação
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Definir o diretório de trabalho
 WORKDIR /app
 
-# Instale as dependências do sistema necessárias para compilar o dlib
-RUN apt-get update -o Acquire::ForceIPv4=true && apt-get install -y \
-    build-essential \
-    cmake \
-    gfortran \
-    libopenblas-dev \
-    liblapack-dev \
-    libx11-dev \
-    libgtk-3-dev && \
-    rm -rf /var/lib/apt/lists/*
+# Copiar os arquivos da pasta local (host) para o container
+COPY app/ /app/
 
-# Copie os arquivos de requisitos (requirements.txt) para o diretório de trabalho no container
-COPY requirements.txt .
-
-# Atualize o pip para a versão mais recente
-RUN pip install --upgrade pip
-
-# Instale as dependências do Python
+# Instalar as dependências
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copie todo o conteúdo da pasta local (no host) para dentro do container
-COPY . .
+# Expor a porta que a aplicação irá rodar
+EXPOSE 5000
 
-# Defina o comando padrão para rodar o aplicativo
+# Definir o comando para rodar o Flask
 CMD ["python", "main.py"]

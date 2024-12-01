@@ -1,26 +1,40 @@
-import os
-import cv2
-import face_recognition as fr
+from flask import Flask
+import psycopg2
 
-# Carregar imagens
-imgElon = fr.load_image_file('images/Elon.jpg')
-imgElon = cv2.cvtColor(imgElon, cv2.COLOR_BGR2RGB)
+app = Flask(__name__)
 
-imgElonTest = fr.load_image_file('images/ElonTest.jpg')
-imgElonTest = cv2.cvtColor(imgElonTest, cv2.COLOR_BGR2RGB)
+# Configuração do banco de dados
+DATABASE_URL = "postgresql://appuser:app_password@db:5432/app_db"
 
-# Processar imagens
-faceLoc = fr.face_locations(imgElon)[0]
-encodeElon = fr.face_encodings(imgElon)[0]
-encodeElonTest = fr.face_encodings(imgElonTest)[0]
+@app.route('/')
+def home():
+    try:
+        # Conectar ao banco de dados
+        conn = psycopg2.connect(DATABASE_URL)
+        cursor = conn.cursor()
+        
+        # Alterar a consulta para a tabela 'registros'
+        cursor.execute("SELECT * FROM registros;")
+        rows = cursor.fetchall()  # Recupera os registros
+        
+        # Formatar os dados em HTML
+        html = "<h1>Bem-vindo ao Projeto DevOps com Docker Compose!</h1>"
+        html += "<h2>Dados do Banco:</h2><ul>"
+        
+        for row in rows:
+            html += f"<li>ID: {row[0]}, Nome: {row[1]}</li>"
+        
+        html += "</ul>"
+        
+        return html
+    except Exception as e:
+        return f"Erro ao acessar o banco de dados: {e}"
+    finally:
+        # Fechar a conexão
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
 
-# Comparar rostos
-comparacao = fr.compare_faces([encodeElon], encodeElonTest)
-distancia = fr.face_distance([encodeElon], encodeElonTest)
-
-print(f"Comparação: {comparacao}, Distância: {distancia}")
-
-# Mostrar imagens (remova para uso em headless container)
-cv2.imshow('Elon', imgElon)
-cv2.imshow('ElonTest', imgElonTest)
-cv2.waitKey(0)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
